@@ -1,0 +1,161 @@
+git status:
+On branch main
+Your branch is behind 'upstream/main' by 8 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+You are currently bisecting, started from branch 'fdabfbae7'.
+  (use "git bisect reset" to get back to the original branch)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ggcm.spec
+	src/notes.md
+	src/notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git branch:
+* main               9b1a8d1ab [behind 8] Merge pull request #151 from choongminum/bugfix/function-prototypes
+  pr/conda           eaac771f8 build: add hacky recognition of conda compiler
+  pr/conductance-ext 18a9cc372 ext: run externally coupled test0004 case in CI
+  pr/iono            735f53fe9 iono: introduce iono_m_finalize()
+  pr/iono-fix        ce9e9abd0 set default for do_diprotate
+  testing            eec106c5c [behind 2] Merge pull request #95 from germasch/pr/fix-allow-argument-mismatch
+  wip2h              bef035c59 [behind 19] wip
+  work               6933bcdc2 isdiag_2d/3d argument type change to double from float (is this portable?)
+
+git log:
+commit 9b1a8d1abea0aeac81ddbdc907c05b3a02e80857
+Merge: 69e8f7dfd 71e82a74e
+Author: Kai Germaschewski <kai.germaschewski@unh.edu>
+Date:   Fri Jun 20 11:17:04 2025 -0400
+
+    Merge pull request #151 from choongminum/bugfix/function-prototypes
+    
+    Bugfix/function prototypes
+
+commit 71e82a74e64c62d7bdaa22c794cdb75a748ea66c
+Author: Choong Min Um <choongmin.um@unh.edu>
+Date:   Thu Jun 19 22:51:18 2025 -0700
+
+    fix: update `onalarm` and `main`
+
+commit af09616fd2e9bef7d6106dde5b15113366de422c
+Author: Choong Min Um <choongmin.um@unh.edu>
+Date:   Thu Jun 19 22:31:47 2025 -0700
+
+    fix: include types for `sind` and `eval_c_simp1`
+
+commit 69e8f7dfdc15b635d2af8fe14930a541cc0fcd55
+Merge: 90e401ffe e37857d8a
+Author: Kai Germaschewski <kai.germaschewski@unh.edu>
+Date:   Mon Jun 16 09:33:04 2025 -0400
+
+    Merge pull request #149 from germasch/pr/iono-rcm
+    
+    mv ionosphere-rcm coupling related code into new module
+
+commit e37857d8af8080eee290b179d821d5502a13ffc1
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 16:21:55 2025 -0400
+
+    iono/rcm: more consistent naming
+
+commit af12db90e28a098daad8cd15f23136b6bad03784
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 16:20:26 2025 -0400
+
+    iono/rcm: mv iono_rcm_m code into separate file
+
+commit eca5b76d788112b5a446ff1db8dc6af69814a3c8
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 16:14:11 2025 -0400
+
+    iono/rcm: do more internally
+    
+    sigdif_fak*_rcm from params, and we already know the switches
+    rcm_make_{fac,precip)
+
+commit de2cb13f81e9659c1cfc669169f01c996a5867e4
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 15:38:54 2025 -0400
+
+    iono/rcm: introduce iono_rcm_make_new_precip()
+
+commit 717100bbd92c9ced37fc95c92605a42396ee607a
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 10:36:00 2025 -0400
+
+    iono/rcm: get fak_fac_rcm from parameters
+
+commit 6758d705955a8a2222b67bfcead894f1c10373d9
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 10:28:29 2025 -0400
+
+    iono/rcm: introduce iono_rcm_make_new_fac()
+
+commit e9b65b69e4b9084e3e377d8b4841d5e8346f23a7
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 10:22:37 2025 -0400
+
+    iono/rcm: avoid fppn for rcm_make_new_fac
+
+commit 43cb2bd335ab0642da8c0d9b6a4a6af6e81b4094
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 10:18:52 2025 -0400
+
+    iono/rcm: get node_rcm from iono_m
+
+commit 48dc519ed3040834aedc3077216b1af65049a89b
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Thu Jun 12 10:15:38 2025 -0400
+
+    iono/rcm: introduce iono_rcm_exchange() in iono_rcm_m
+
+commit 7cb5ac773d298da1905e555ef9a5e446566887aa
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 23:25:15 2025 -0400
+
+    iono/rcm: mv iono_diag_rcm() -> iono_rcm_m
+
+commit 53a8815ea658f8f4535fd8fd7bd3612755bc38bc
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 23:20:41 2025 -0400
+
+    iono/rcm: un-fppn iono_diag_rcm()
+
+commit c20ce7149d593972ad4986604bb54455d7e69ce7
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 23:05:22 2025 -0400
+
+    iono/rcm: determine use_rcm at runtime
+
+commit e1dae7d705340444d6ce416e377e62f3251dab5d
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 22:50:25 2025 -0400
+
+    iono/rcm: mv rcm-specific fields -> new module iono_rcm_m
+
+commit 90e401ffea87ca48a3f8bd5518e445479724915c
+Merge: ba6a78483 e7f203910
+Author: Kai Germaschewski <kai.germaschewski@unh.edu>
+Date:   Mon Jun 16 09:13:05 2025 -0400
+
+    Merge pull request #148 from germasch/pr/iono-diag-post
+    
+    mv iono postprocessing into separate module
+
+commit e7f2039107ad19c776361b139de25e89c50ec67e
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 22:28:28 2025 -0400
+
+    iono/diag_post: mv iono_diag_post-specific fields -> iono_diag_post_m
+
+commit 71e5b042134261d35b4ca42e72364334988bbc6e
+Author: Kai Germaschewski <kai.germaschewski@gmail.com>
+Date:   Wed Jun 11 22:18:32 2025 -0400
+
+    iono/diag_post: prepare for moving some fields -> iono_diag_post_m
+
+git diff:
+
